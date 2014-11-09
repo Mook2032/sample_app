@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		p.sub {
+    		font-style: italic;
+    		font-size: 70%;
+		}
+		h1 {
+			color: blue;
+			font-style: bold;
+			text-indent: 0px;
+		}
+		body {
+			color: black;
+			text-indent: 32px;
+		}
+	</style>
+	<head>
+		<h1><title><%= title %></title></h1>
+		<%= csrf_meta_tag %>
+	</head>
+	<body>
+		<%= yield %>
+	</body>
+</html>
