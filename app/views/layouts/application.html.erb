@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html>
-	<style>
-		p.sub {
-    		font-style: italic;
-    		font-size: 70%;
-		}
-		h1 {
-			color: blue;
-			font-style: bold;
-			text-indent: 0px;
-		}
-		body {
-			color: black;
-			text-indent: 32px;
-		}
-	</style>
 	<head>
 		<h1><title><%= title %></title></h1>
+		<%= stylesheet_link_tag	'application', media: 'all',
+									'data-turbolinks-track' => true %>
+		<%= javascript_include_tag	'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tag %>
+		<%= render 'layouts/shim' %>
 	</head>
 	<body>
-		<%= yield %>
+		<%= render 'layouts/header' %>
+		<div class= "container">
+			<%= yield %>
+			<%= render 'layouts/footer' %>
+		</div>
 	</body>
 </html>
