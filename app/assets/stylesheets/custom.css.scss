@@ -1,117 +1,176 @@
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.container {
-width: 710px;
+html {
+	overflow: scroll;
 }
+
 body {
-background: #cff;
+	padding-top: 60px;
 }
-header {
-padding-top: 20px;
-}
-header img {
-padding: 1em;
-background: #fff;
-}
-www.it-ebooks.info166
-Chapter 5: Filling in the Layout
+
 section {
-margin-top: 1em;
-font-size: 120%;
-padding: 20px;
-background: #fff;
+	overflow: auto;
 }
-section h1 {
-font-size: 200%;
+
+textarea {
+	resize: vertical;
 }
-/* Links */
+
+.center {
+	text-align: center;
+	h1 {
+		margin-bottom: 10px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
+}
+
+h1 {
+	font-size: 3em;
+	letter-spacing: -2px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.2em;
+	letter-spacing: -1px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-weight: normal;
+	color: #777;
+}
+
+p {
+	font-size: 1.1em;
+	line-height: 1.7em;
+}
+
+#logo {
+	float: left;
+	margin-right: 10px;
+	font-size: 1.7em;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	padding-top: 9px;
+	padding-left: 9px;
+	font-weight: bold;
+
+	&:hover{
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid #eaeaea;
+	color: #777;
+
+ 	small {
+		float: left;
+	}
+	 ul {
+		float: right;
+		list-style: none;
+		 li {
+			float: right;
+			margin-left: 15px;
+		}
+	}
+}
+
 a {
-color: #09c;
-text-decoration: none;
+	&:link {
+		text-decoration: none;
+	}
+	&:hover {
+		color: lawngreen;
+	}
 }
-a:hover {
-color: #069;
-text-decoration: underline;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
 }
-a:visited {
-color: #069;
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
 }
 
 .field_with_errors {
-margin-top: 10px;
-padding: 2px;
-background-color: red;
-display: table;
-}
-.field_with_errors label {
-color: #fff;
-}
-#error_explanation {
-width: 400px;
-border: 2px solid red;
-padding: 7px;
-padding-bottom: 12px;
-margin-bottom: 20px;
-background-color: #f0f0f0;
-}
-#error_explanation h2 {
-text-align: left;
-font-weight: bold;
-padding: 5px 5px 5px 15px;
-font-size: 12px;
-margin: -7px;
-background-color: #c00;
-color: #fff;
-}
-#error_explanation p {
-color: #333;
-margin-bottom: 0;
-padding: 5px;
-}
-#error_explanation ul li {
-font-size: 12px;
-list-style: square;
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }
 
-a.signup_button {
-margin-left: auto;
-margin-right: auto;
-display: block;
-text-align: center;
-width: 190px;
-color: #fff;
-background: #006400;
-font-size: 150%;
-font-weight: bold;
-padding: 20px;
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
 }
 
-nav {
-float: right;
-}
-nav {
-background-color: white;
-padding: 0 0.7em;
-white-space: nowrap;
-}
-nav ul {
-margin: 0;
-padding: 0;
-}
-nav ul li {
-list-style-type: none;
-display: inline-block;
-padding: 0.2em 0;
-}
-nav ul li a {
-padding: 0 5px;
-font-weight: bold;
-}
-nav ul li a:visited {
-color: #09c;
-}
-nav ul li a:hover {
-text-decoration: underline;
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }

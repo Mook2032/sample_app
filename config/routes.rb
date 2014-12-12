@@ -1,23 +1,28 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   root 'pages#home', as: :home
 
-  get 'pages/contact', as: :contact
+  get 'contact' => 'pages#contact', as: :contact
 
-  get 'pages/about', as: :about
+  get 'about' => 'pages#about', as: :about
 
-  get 'pages/help', as: :help
+  get 'help' => 'pages#help', as: :help
 
-  get 'users/register', as: :register
+  get 'register' => 'users#new', as: :register
 
-  get 'users/login', as: :login
-
-  get 'users/show', as: :show
-
-  post 'users/register' => 'users#create'
+  post 'register' => 'users#create'
 
   get 'users/:id' => 'users#show'
-  #resources :users
+
+  get    'login'   => 'sessions#new', as: :login
+
+  post   'login'   => 'sessions#create'
+
+  delete 'logout'  => 'sessions#destroy'
+  
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
