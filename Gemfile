@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 # Pass
 gem 'bcrypt'
+# Random user generator
+gem 'faker'
 # Bootstrap
 gem 'bootstrap-sass'
 # Use postgresql as the database for Active Record
@@ -17,6 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

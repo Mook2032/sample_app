@@ -4,5 +4,7 @@
 	<p>
 		This is the homepage for my Ruby on Rails sample application.
 	</p>
-	<%= link_to "Sign up now!", :register, :class => "btn btn-lg btn-primary" %>
+	<% if !logged_in? %>
+	    <%= link_to "Sign up now!", :register, :class => "btn btn-lg btn-primary" %>
+    <% end %>
 </div>
